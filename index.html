@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <main class="w-[80%] mx-auto">
+        <section class="mt-8">
+            <h1 class="text-gray-600 text-center text-3xl font-black mb-4">Search Word for Details</h1>
+            <div class="form-control">
+                <div class="input-group">
+                    <input id="search-input" type="text" placeholder="Search…" class="input input-bordered" />
+                    <button onclick="loadData()" id="search-btn" class="btn btn-square">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading animation -->
+            <div id="loader" class="hidden mt-20">
+                <div class="flex items-center justify-center">
+                    <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                        role="status">
+                        <span
+                            class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <div id="main-card-container" class="card bg-base-100 shadow-2xl rounded-md mb-8">
+                    <div id="card-container">
+                        <!-- <div class="flex justify-between">
+                            <div>
+                                <h2 class="card-title">${data[0].word ? data[0].word : ''}</h2>
+                                <p>${data[0].phonetic ? data[0].phonetic : ''}</p>
+                            </div>
+                            <div>
+                                <audio controls
+                                    src="${data[0].phonetics[0].audio ? data[0].phonetics[0].audio : ''}"></audio>
+                            </div>
+                        </div>
+                        <hr> -->
+
+                        <!-- <div class="flex flex-col space-y-4">
+                            <p><strong>PartOfSpeech: </strong> ${partOfSpeech ? partOfSpeech : ''}</p>
+                            <p><strong>Meaning: </strong> ${mainDef ? mainDef : ''}</p>
+                            <p><strong>Synonyms: </strong> ${synonyms ? synonyms : ''}</p>
+                            <p><strong>Antonyms: </strong> ${antonyms ? antonyms : ''}</p>
+                        </div>
+                        <hr class="mt-4"> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/utilities.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
